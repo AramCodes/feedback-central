@@ -1,12 +1,14 @@
 import FeedbackItem from "./FeedbackItem"
+import { motion, AnimatePresence } from "framer-motion"
 
-const FeedbackList = ({feedback}: any ) => {
+const FeedbackList = ({feedback, handleDelete}: any ) => {
 
     const feedbackCards = feedback.map((item: {id: number, rating: number, text: string})  => {
     return (
         <FeedbackItem 
         key={item.id} 
-        item = {item} 
+        item = {item}
+        handleDelete = {handleDelete}
         />
     )
     })

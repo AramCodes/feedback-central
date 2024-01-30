@@ -2,7 +2,7 @@
 const Card = ({children}: any, reverse: boolean) => {
 
   return (
-    <div className={`card ${reverse? "reverse": null}`}>
+    <div className={`card ${reverse === true ? "reverse": ""}`}>
         {children}
     </div>
   )
