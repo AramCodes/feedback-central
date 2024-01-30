@@ -5,23 +5,33 @@ const FeedbackList = ({feedback, handleDelete}: any ) => {
 
     const feedbackCards = feedback.map((item: {id: number, rating: number, text: string})  => {
     return (
-        <FeedbackItem 
-        key={item.id} 
-        item = {item}
-        handleDelete = {handleDelete}
-        />
+        <motion.div 
+        key = {item.id}
+        initial = {{opacity: 0}}
+        animate = {{opacity: 1}}
+        exit={{opacity: 0}}
+        >
+            <FeedbackItem 
+                key = {item.id} 
+                item = {item}
+                handleDelete = {handleDelete}
+            />
+        </motion.div>
     )
     })
 
     if (!feedback || feedback.length === 0) { 
         return <p>There is no feedback yet</p>
-    } else {
-        return (
-            <div className="feedback-list">
+    } 
+
+    return (
+        <div className="feedback-list">
+            <AnimatePresence>
                 {feedbackCards}
-            </div>
-        )
-    }
+            </AnimatePresence>
+        </div>
+    )
+    
 }
 
 export default FeedbackList
