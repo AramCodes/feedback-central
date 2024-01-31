@@ -1,9 +1,13 @@
+import { useContext } from "react"
+import FeedbackContext from "../context/FeedbackContext"
 import FeedbackItem from "./FeedbackItem"
 import { motion, AnimatePresence } from "framer-motion"
+ 
+const FeedbackList = () => {
 
-const FeedbackList = ({feedback, handleDelete}: any ) => {
+    const { feedback }:any = useContext(FeedbackContext);
 
-    const feedbackCards = feedback.map((item: {id: number, rating: number, text: string})  => {
+    const feedbackCards = feedback.map((item: {id: string, rating: number, text: string})  => {
     return (
         <motion.div 
         key = {item.id}
@@ -14,7 +18,6 @@ const FeedbackList = ({feedback, handleDelete}: any ) => {
             <FeedbackItem 
                 key = {item.id} 
                 item = {item}
-                handleDelete = {handleDelete}
             />
         </motion.div>
     )

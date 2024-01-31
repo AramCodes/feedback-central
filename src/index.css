@@ -139,11 +139,13 @@ input:focus {
   cursor: pointer;
   background: none;
   border: none;
-  font-size: 1.125rem;
+  font-size: 1.3rem;
+  margin-right: 5px;
 }
 
-.edit {
+.edit { 
   right: 40px;
+  margin-right: 13px;
 }
 
 .btn {
