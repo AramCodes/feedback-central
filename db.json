@@ -1,0 +1,34 @@
+{
+  "feedback": [
+    {
+      "id": "g3J0",
+      "text": "This is feedback item number 1, which is coming from the backend",
+      "rating": 9
+    },
+    {
+      "id": "h9D1",
+      "text": "This is feedback item number 2, which is coming from the backend",
+      "rating": 8
+    },
+    {
+      "id": "nrf1",
+      "text": "This is feedback item number 3, which is coming from the",
+      "rating": 10
+    },
+    {
+      "id": "d5m1",
+      "text": "This is item number 4, which is coming from the backend",
+      "rating": 8
+    },
+    {
+      "id": "fh38",
+      "text": "This is item number 5, which is coming from the backend",
+      "rating": 10
+    },
+    {
+      "id": "05fb",
+      "text": "this is feedback item 6 pushed through API",
+      "rating": 10
+    }
+  ]
+}

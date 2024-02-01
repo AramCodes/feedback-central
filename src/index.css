@@ -131,6 +131,11 @@ input:focus {
   left: -10px;
 }
 
+.loader {
+  display: block;
+  margin: 250px auto;
+}
+
 .close,
 .edit {
   position: absolute;

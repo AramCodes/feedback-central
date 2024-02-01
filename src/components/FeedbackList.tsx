@@ -2,10 +2,11 @@ import { useContext } from "react"
 import FeedbackContext from "../context/FeedbackContext"
 import FeedbackItem from "./FeedbackItem"
 import { motion, AnimatePresence } from "framer-motion"
+import Loader from "../assets/loader.svg"
  
 const FeedbackList = () => {
 
-    const { feedback }:any = useContext(FeedbackContext);
+    const { feedback, isLoading }:any = useContext(FeedbackContext);
 
     const feedbackCards = feedback.map((item: {id: string, rating: number, text: string})  => {
     return (
@@ -23,16 +24,23 @@ const FeedbackList = () => {
     )
     })
 
-    if (!feedback || feedback.length === 0) { 
+    if (!isLoading && (!feedback || feedback.length === 0)) { 
         return <p>There is no feedback yet</p>
-    } 
+    }
+    
+    return isLoading? 
+    ( <div className="feedback-list"> 
+        <img src={Loader} alt="loader" className="loader"/> 
+      </div> 
+    )
 
-    return (
-        <div className="feedback-list">
-            <AnimatePresence>
-                {feedbackCards}
-            </AnimatePresence>
-        </div>
+    :
+
+    ( <div className="feedback-list">
+        <AnimatePresence>
+            {feedbackCards}
+        </AnimatePresence>
+      </div> 
     )
     
 }
